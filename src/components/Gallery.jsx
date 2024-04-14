@@ -97,6 +97,35 @@ export function Gallery(props) {
         position={[-24, 0, 0]}
         scale={0.05}
       />
+
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube004.geometry}
+        material={materials.Ventana_Vidrio}
+        position={[-8.2, 0, 7.8]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plane005.geometry}
+        material={materials.Concreto_Entrada}
+      />
+
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plane004.geometry}
+        material={materials.Concreto_Entrada}
+        position={[-23.341, 2, 0.005]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube001.geometry}
+        material={materials.Concreto_Entrada}
+        position={[-9, 5, 0]}
+      />
       <RigidBody type="fixed" colliders="cuboid">
         <mesh
           castShadow
@@ -124,15 +153,8 @@ export function Gallery(props) {
           rotation={[0, 0, 10]}
         />
       </RigidBody>
-      <RigidBody type="fixed" colliders="trimesh">
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube001.geometry}
-          material={materials.Concreto_Entrada}
-          position={[-9, 5, 0]}
-        />
 
+      <RigidBody type="fixed" colliders="cuboid">
         <mesh
           castShadow
           receiveShadow
@@ -140,36 +162,14 @@ export function Gallery(props) {
           material={materials.Marmol}
           position={[-8.2, 0, 7.8]}
         />
-
+      </RigidBody>
+      <RigidBody type="fixed" colliders="trimesh">
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Plane002.geometry}
           material={materials.Concreto_Entrada}
           position={[-23.341, 2, 0.005]}
-        />
-
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane005.geometry}
-          material={materials.Concreto_Entrada}
-        />
-
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Plane004.geometry}
-          material={materials.Concreto_Entrada}
-          position={[-23.341, 2, 0.005]}
-        />
-
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube004.geometry}
-          material={materials.Ventana_Vidrio}
-          position={[-8.2, 0, 7.8]}
         />
 
         <mesh

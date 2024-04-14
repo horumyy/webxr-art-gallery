@@ -21,7 +21,7 @@ export default function Experience() {
           <Sky sunPosition={[100, 20, 100]} />
           <Lights />
 
-          <Physics debug gravity={[0, -30, 0]}>
+          <Physics gravity={[0, -30, 0]}>
             <Map />
             <Player />
           </Physics>
