@@ -50,7 +50,7 @@ export default function Player() {
         mass={1}
         enabledRotations={[false, false, false]}
       >
-        <CapsuleCollider args={[0.75, 0.5]} />
+        <CapsuleCollider args={[0.75, 0.2]} />
       </RigidBody>
     </group>
   );
