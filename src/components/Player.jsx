@@ -40,7 +40,7 @@ export default function Player() {
     });
   });
   return (
-    <group>
+    <group position={[0, 0, 2]}>
       <RigidBody
         ref={bodyRef}
         restitution={0.2}
