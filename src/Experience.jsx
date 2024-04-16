@@ -18,7 +18,11 @@ export default function Experience() {
   return (
     <>
       <EcctrlJoystick />
-      <Canvas shadows camera={{ fov: 45 }}>
+      <Canvas shadows camera={{ fov: 45 }} 
+         onPointerDown={(e) => {
+     (e.target).requestPointerLock();
+   }}
+      >
         <Sky sunPosition={[100, 20, 100]} />
         <Lights />
 
