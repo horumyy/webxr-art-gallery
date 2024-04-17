@@ -1,0 +1,62 @@
+import { useRef } from "react";
+import * as THREE from "three";
+
+import { RigidBody, CapsuleCollider } from "@react-three/rapier";
+import { useFrame } from "@react-three/fiber";
+import { useKeyboardControls } from "@react-three/drei";
+
+export default function Player() {
+  //add a listener to the window to listen for when the screen lost focus and came back, when that happens the controllers stop working
+  const [subscribeKeys, getKeys] = useKeyboardControls();
+
+  window.addEventListener("focus", () => {
+    getKeys();
+  });
+
+  const bodyRef = useRef();
+
+  const SPEED = 5;
+  const direction = new THREE.Vector3();
+  const frontVector = new THREE.Vector3();
+  const sideVector = new THREE.Vector3();
+
+  useFrame((state) => {
+    const { forward, backward, leftward, rightward } = getKeys();
+    const translation = bodyRef.current.translation();
+    const velocity = bodyRef.current.linvel();
+
+    // Update the camera position
+    if (translation) {
+      state.camera.position.set(translation.x, translation.y, translation.z);
+    }
+
+    // movement
+    frontVector.set(0, 0, backward - forward);
+    sideVector.set(leftward - rightward, 0, 0);
+    direction
+      .subVectors(frontVector, sideVector)
+      .normalize()
+      .multiplyScalar(SPEED)
+      .applyEuler(state.camera.rotation);
+    bodyRef.current.setLinvel({
+      x: direction.x,
+      y: velocity.y,
+      z: direction.z,
+    });
+  });
+  return (
+    <group position={[0, 0, 2]}>
+      <RigidBody
+        ref={bodyRef}
+        restitution={0.2}
+        friction={1}
+        type="dynamic"
+        colliders={false}
+        mass={1}
+        enabledRotations={[false, false, false]}
+      >
+        <CapsuleCollider args={[0.75, 0.2]} />
+      </RigidBody>
+    </group>
+  );
+}

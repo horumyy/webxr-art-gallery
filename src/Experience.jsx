@@ -1,9 +1,11 @@
 import { Canvas } from "@react-three/fiber";
 import { PointerLockControls, KeyboardControls, Sky } from "@react-three/drei";
+//eslint-disable-next-line
 import Ecctrl, { EcctrlJoystick } from "ecctrl";
 import Map from "./components/Map";
 import { Physics } from "@react-three/rapier";
 import Lights from "./components/Lights";
+import Player from "./components/Player";
 
 export default function Experience() {
   const keyboardMap = [
@@ -11,7 +13,6 @@ export default function Experience() {
     { name: "backward", keys: ["ArrowDown", "s", "S"] },
     { name: "leftward", keys: ["ArrowLeft", "a", "A"] },
     { name: "rightward", keys: ["ArrowRight", "d", "D"] },
-    { name: "jump", keys: ["Space"] },
     { name: "run", keys: ["Shift"] },
   ];
 
@@ -24,7 +25,7 @@ export default function Experience() {
         <Physics gravity={[0, -30, 0]}>
           <Map />
           <KeyboardControls map={keyboardMap}>
-            <Ecctrl
+            {/* <Ecctrl
               camInitDis={-0.01} // camera intial position
               camMinDis={-0.01} // camera zoom in closest position
               camFollowMult={100} // give any big number here, so the camera follows the character instantly
@@ -33,7 +34,8 @@ export default function Experience() {
               mode="CameraBasedMovement" // character's rotation will follow camera's rotation in this mode
             >
               <mesh />
-            </Ecctrl>
+            </Ecctrl> */}
+            <Player />
           </KeyboardControls>
         </Physics>
         <PointerLockControls />
