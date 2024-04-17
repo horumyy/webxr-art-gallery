@@ -10,6 +10,7 @@ export default function Player() {
   const [subscribeKeys, getKeys] = useKeyboardControls();
 
   window.addEventListener("focus", () => {
+    subscribeKeys();
     getKeys();
   });
 

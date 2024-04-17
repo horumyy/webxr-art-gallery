@@ -25,7 +25,7 @@ export default function Experience() {
         <Physics gravity={[0, -30, 0]}>
           <Map />
           <KeyboardControls map={keyboardMap}>
-            {/* <Ecctrl
+            <Ecctrl
               camInitDis={-0.01} // camera intial position
               camMinDis={-0.01} // camera zoom in closest position
               camFollowMult={100} // give any big number here, so the camera follows the character instantly
@@ -34,8 +34,8 @@ export default function Experience() {
               mode="CameraBasedMovement" // character's rotation will follow camera's rotation in this mode
             >
               <mesh />
-            </Ecctrl> */}
-            <Player />
+            </Ecctrl>
+            {/* <Player /> */}
           </KeyboardControls>
         </Physics>
         <PointerLockControls />
