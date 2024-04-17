@@ -26,6 +26,7 @@ export default function Experience() {
           <Map />
           <KeyboardControls map={keyboardMap}>
             <Ecctrl
+              position={[-5, 0, -5]}
               camInitDis={-0.01} // camera intial position
               camMinDis={-0.01} // camera zoom in closest position
               camFollowMult={100} // give any big number here, so the camera follows the character instantly
