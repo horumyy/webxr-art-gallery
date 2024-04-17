@@ -1,8 +1,6 @@
 import { useHelper } from "@react-three/drei";
 import { useRef } from "react";
-import { DirectionalLightHelper, SpotLightHelper } from "three";
-
-import * as THREE from "three";
+import { DirectionalLightHelper } from "three";
 
 export default function Lights() {
   const light = useRef();
@@ -12,7 +10,6 @@ export default function Lights() {
   return (
     <>
       <ambientLight intensity={0.3} />
-      {/* sun */}
       <directionalLight
         position={[-25, 10, 1]}
         intensity={0.5}

@@ -17,7 +17,6 @@ export default function Experience() {
 
   return (
     <>
-      <EcctrlJoystick />
       <Canvas shadows camera={{ fov: 45 }}>
         <Sky sunPosition={[100, 20, 100]} />
         <Lights />
