@@ -1,11 +1,10 @@
 import { Canvas } from "@react-three/fiber";
-import { PointerLockControls, KeyboardControls, Sky } from "@react-three/drei";
+import { KeyboardControls, PointerLockControls, Sky } from "@react-three/drei";
 //eslint-disable-next-line
 import Ecctrl, { EcctrlJoystick } from "ecctrl";
 import Map from "./components/Map";
 import { Physics } from "@react-three/rapier";
 import Lights from "./components/Lights";
-import Player from "./components/Player";
 
 export default function Experience() {
   const keyboardMap = [
@@ -14,17 +13,17 @@ export default function Experience() {
     { name: "leftward", keys: ["ArrowLeft", "a", "A"] },
     { name: "rightward", keys: ["ArrowRight", "d", "D"] },
     { name: "run", keys: ["Shift"] },
+    { name: "jump", keys: ["Space"] },
   ];
 
   return (
     <>
-      <Canvas shadows camera={{ fov: 45 }}>
-        <Sky sunPosition={[100, 20, 100]} />
-        <Lights />
-
-        <Physics gravity={[0, -30, 0]}>
-          <Map />
-          <KeyboardControls map={keyboardMap}>
+      <KeyboardControls map={keyboardMap}>
+        <Canvas shadows>
+          <Sky sunPosition={[100, 20, 100]} />
+          <Lights />
+          <Physics gravity={[0, -30, 0]}>
+            <Map />
             <Ecctrl
               position={[-5, 0, -5]}
               camInitDis={-0.01} // camera intial position
@@ -36,11 +35,10 @@ export default function Experience() {
             >
               <mesh />
             </Ecctrl>
-            {/* <Player /> */}
-          </KeyboardControls>
-        </Physics>
-        <PointerLockControls />
-      </Canvas>
+            <PointerLockControls />
+          </Physics>
+        </Canvas>
+      </KeyboardControls>
     </>
   );
 }
