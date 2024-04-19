@@ -1546,10 +1546,10 @@ eastasianwidth@^0.2.0:
   resolved "https://registry.yarnpkg.com/eastasianwidth/-/eastasianwidth-0.2.0.tgz#696ce2ec0aa0e6ea93a397ffcf24aa7840c827cb"
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
-ecctrl@1.0.67:
-  version "1.0.67"
-  resolved "https://registry.yarnpkg.com/ecctrl/-/ecctrl-1.0.67.tgz#5939f0f034efee8c22c2ab16a2383854cbebaa2f"
-  integrity sha512-38cn3vxy81kkNTnpckwd6ofHH/ySKbeHOBkHNqB1vYwRC/EphYG/ChRMYbYsKVOplkbiSH++9P++bPOIIMWpVg==
+ecctrl@^1.0.75:
+  version "1.0.75"
+  resolved "https://registry.yarnpkg.com/ecctrl/-/ecctrl-1.0.75.tgz#e0aaa5895cb99ecfe0853c3cdf5bd97534313162"
+  integrity sha512-VRxihKQLTgiJcn5b+GEhYBzo2WxnPrANuCpUkxfvw1zLaNLTCwG7MHMiBr24N/+jNJH0kyQqspGXz1+LOEGnZQ==
   dependencies:
     "@react-spring/three" "^9.7.3"
     leva "^0.9.34"

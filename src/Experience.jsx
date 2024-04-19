@@ -18,7 +18,7 @@ export default function Experience() {
   return (
     <>
       <KeyboardControls map={keyboardMap}>
-        <Canvas shadows>
+        <Canvas shadows onMouseDown={(e) => e.target.requestPointerLock()}>
           <Sky sunPosition={[100, 20, 100]} />
           <Lights />
           <Physics gravity={[0, -30, 0]}>
@@ -34,7 +34,6 @@ export default function Experience() {
             >
               <mesh />
             </Ecctrl>
-            <PointerLockControls />
           </Physics>
         </Canvas>
       </KeyboardControls>
