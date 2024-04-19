@@ -126,6 +126,7 @@ export function Gallery(props) {
         material={materials.Concreto_Entrada}
         position={[-9, 5, 0]}
       />
+      {/*Crystal collider*/}
       <RigidBody type="fixed" colliders="cuboid">
         <mesh
           castShadow
@@ -137,7 +138,7 @@ export function Gallery(props) {
           scale={0.05}
         />
       </RigidBody>
-      {/* left stairs */}
+      {/*left room, left stairs ,*/}
       <RigidBody type="fixed" colliders={false}>
         <CuboidCollider
           args={[1, 0.2, 4.5]}
@@ -145,7 +146,7 @@ export function Gallery(props) {
           rotation={[0, 0, 10]}
         />
       </RigidBody>
-      {/* Right stairs */}
+      {/*left room, Right stairs */}
       <RigidBody type="fixed" colliders={false}>
         <CuboidCollider
           args={[1, 0.2, 4.5]}
@@ -153,7 +154,7 @@ export function Gallery(props) {
           rotation={[0, 0, 10]}
         />
       </RigidBody>
-
+      {/*left room, full stairs */}
       <RigidBody type="fixed" colliders="cuboid">
         <mesh
           castShadow
@@ -163,6 +164,7 @@ export function Gallery(props) {
           position={[-8.2, 0, 7.8]}
         />
       </RigidBody>
+      {/* walls and floor colliders */}
       <RigidBody type="fixed" colliders="trimesh">
         <mesh
           castShadow

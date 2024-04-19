@@ -45,8 +45,9 @@ svg {
 }
 
 canvas {
-  opacity: 1;
-  /* change to 0 to enable animation */
+  /* Change to 1 to disable animation */
+  opacity: 0;
   touch-action: none;
-  /* animation: fade-in 5s ease 1s forwards; */
+  /* Remove this line to disable animation */
+  animation: fade-in 5s ease 1s forwards;
 }
