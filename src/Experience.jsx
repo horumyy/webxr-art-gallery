@@ -13,7 +13,6 @@ export default function Experience() {
     { name: "leftward", keys: ["ArrowLeft", "a", "A"] },
     { name: "rightward", keys: ["ArrowRight", "d", "D"] },
     { name: "run", keys: ["Shift"] },
-    { name: "jump", keys: ["Space"] },
   ];
 
   return (
