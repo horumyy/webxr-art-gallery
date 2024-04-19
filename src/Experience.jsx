@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { KeyboardControls, PointerLockControls, Sky } from "@react-three/drei";
+import { KeyboardControls, Sky } from "@react-three/drei";
 //eslint-disable-next-line
 import Ecctrl, { EcctrlJoystick } from "ecctrl";
 import Map from "./components/Map";
