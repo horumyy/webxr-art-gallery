@@ -1,10 +1,10 @@
 import { Canvas } from "@react-three/fiber";
 import { KeyboardControls, Sky } from "@react-three/drei";
-//eslint-disable-next-line
 import Ecctrl, { EcctrlJoystick } from "ecctrl";
 import Map from "./components/Map";
 import { Physics } from "@react-three/rapier";
 import Lights from "./components/Lights";
+import { isMobile } from "react-device-detect";
 
 export default function Experience() {
   const keyboardMap = [
@@ -18,6 +18,7 @@ export default function Experience() {
   return (
     <>
       <KeyboardControls map={keyboardMap}>
+        {isMobile && <EcctrlJoystick />}
         <Canvas shadows onMouseDown={(e) => e.target.requestPointerLock()}>
           <Sky sunPosition={[100, 20, 100]} />
           <Lights />

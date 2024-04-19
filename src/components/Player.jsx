@@ -6,7 +6,6 @@ import { useFrame } from "@react-three/fiber";
 import { useKeyboardControls } from "@react-three/drei";
 
 export default function Player() {
-  //add a listener to the window to listen for when the screen lost focus and came back, when that happens the controllers stop working
   const [subscribeKeys, getKeys] = useKeyboardControls();
 
   window.addEventListener("focus", () => {
